@@ -4,3 +4,11 @@ build:
     - GRADLE_USER_HOME=~/.gradle
   commands:
     - ./gradlew test
+publish:
+  docker:
+    username: rbottino
+    password: $$DOCKERHUBPASS
+    email: rbottino@vertigo.com.br
+    repo: rbottino/drone-demk-with-java
+    tag: $$BRANCH
+    file: Dockerfile
