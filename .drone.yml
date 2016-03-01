@@ -4,11 +4,28 @@ build:
     - GRADLE_USER_HOME=~/.gradle
   commands:
     - ./gradlew test
-publish:
-  docker:
-    username: rbottino
-    password: $$DOCKERHUBPASS
-    email: rbottino@vertigo.com.br
-    repo: rbottino/drone-demk-with-java
-    tag: $$BRANCH
-    file: Dockerfile
+
+deploy:
+  git_push:
+    branch: master
+    remote: git@github.com:vertigobr/drone-demo-with-java.git
+    force: false
+
+# publish:
+#   docker:
+#     username: rbottino
+#     password: $$DOCKERHUBPASS
+#     email: rbottino@vertigo.com.br
+#     repo: rbottino/drone-demo-with-java
+#     tag: $$BRANCH
+#     file: Dockerfile
+#  gcr:
+#     repo: rbottino/drone-demo-with-java
+#     token: >
+#       {
+#         "private_key_id": "...",
+#         "private_key": "...",
+#         "client_email": "...",
+#         "client_id": "...",
+#         "type": "..."
+#       }
