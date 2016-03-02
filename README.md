@@ -1,4 +1,3 @@
-[![Build Status](http://162.243.92.13/api/badges/rbottino/drone-demo-with-java/status.svg)](http://localhost:8000/rbottino/drone-demo-with-java)
+[![Build Status](http://drone.vertigo.com.br/api/badges/rbottino/drone-demo-with-java/status.svg)](http://drone.vertigo.com.br/rbottino/drone-demo-with-java)
 
-An example of how to test Java code.
- 
+Um exemplo prático de como pode funcionar o CI de um projeto Java no Drone.
