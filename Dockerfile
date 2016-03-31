@@ -1,5 +1,5 @@
 FROM java:openjdk-7
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN javac Main.java
+COPY src /usr/src
+WORKDIR /usr/src
+RUN javac main/java/com/ningen/gomi/drone/java/Main.java
 CMD ["java", "Main"]
