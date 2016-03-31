@@ -23,7 +23,7 @@ job:
   stage: test
   script:
     - docker run --rm docker-image ./gradlew test
-    only:
-      - master
-    tags:
-      - docker
+  only:
+    - master
+  tags:
+    - docker
