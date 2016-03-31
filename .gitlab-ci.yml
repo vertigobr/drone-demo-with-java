@@ -2,15 +2,15 @@
 # services:
 #   - postgres
 #
- before_script:
-   - docker info
+before_script:
+  - docker info
 
 stages:
   - build
   - test
   - deploy
 
-  job_build_image:
+job:
   stage: build
   script:
     - docker build -t docker-image .
@@ -19,7 +19,7 @@ stages:
   tags:
     - docker
 
-job_test_image:
+job:
   stage: test
   script:
     - docker run --rm docker-image ./gradlew test
