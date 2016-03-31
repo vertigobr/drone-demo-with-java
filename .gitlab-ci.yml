@@ -1,0 +1,29 @@
+# image: ruby:2.1
+# services:
+#   - postgres
+#
+ before_script:
+   - docker info
+
+stages:
+  - build
+  - test
+  - deploy
+
+build_image:
+  stage: build
+  script:
+    - docker build -t docker-image .
+  only:
+    - master
+  tags:
+    - docker
+
+test_image:
+  stage: test
+  script:
+    - docker run --rm docker-image ./gradlew test
+    only:
+      - master
+    tags:
+      - docker
