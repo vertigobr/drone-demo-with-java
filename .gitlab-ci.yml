@@ -10,7 +10,7 @@ stages:
   - test
   - deploy
 
-build_image:
+  job_build_image:
   stage: build
   script:
     - docker build -t docker-image .
@@ -19,7 +19,7 @@ build_image:
   tags:
     - docker
 
-test_image:
+job_test_image:
   stage: test
   script:
     - docker run --rm docker-image ./gradlew test
