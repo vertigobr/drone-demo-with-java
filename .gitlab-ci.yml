@@ -27,3 +27,12 @@ test_image:
     - master
   tags:
     - docker
+
+deploy_image:
+  stage: deploy
+  script:
+    -docker run -d --name my-app docker-image
+  only:
+    -master
+  tags:
+    - docker
