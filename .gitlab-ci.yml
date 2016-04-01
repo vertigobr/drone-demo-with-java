@@ -1,9 +1,5 @@
-# image: ruby:2.1
-# services:
-#   - postgres
-#
 before_script:
-  - docker info
+  - docker --version
 
 stages:
   - build
@@ -17,7 +13,7 @@ build_image:
   only:
     - master
   tags:
-    - docker
+    - shell-docker
 
 test_image:
   stage: test
@@ -26,7 +22,7 @@ test_image:
   only:
     - master
   tags:
-    - docker
+    - shell-docker
 
 deploy_image:
   stage: deploy
@@ -35,4 +31,4 @@ deploy_image:
   only:
     - master
   tags:
-    - docker
+    - shell-docker
