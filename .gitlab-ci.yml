@@ -27,7 +27,6 @@ test_image:
 deploy_image:
   stage: deploy
   script:
-    - docker run -d --name my-app docker-image
     - docker tag docker-image vertigo/ci-test:$CI_BUILD_NAME
     - docker push
   only:
